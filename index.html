@@ -11,640 +11,550 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            /* Deep Blue/Grey */
-            --accent-color: #3498db;
-            /* Brighter Blue for accents */
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #2d3436;
-            --subtext-color: #636e72;
-            --success-color: #00b894;
-            --danger-color: #d63031;
-            --neutral-color: #b2bec3;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --radius: 12px;
-        }
-
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #f8f9fa;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px;
             display: flex;
             justify-content: center;
         }
 
-        .container {
+        /* Styling Scoped to Rating Container */
+        #sissa-rating-container {
+            font-family: 'Outfit', sans-serif;
+            color: #2d3436;
             width: 100%;
             max-width: 1000px;
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            margin: 0 auto;
+            border-radius: 12px;
             overflow: hidden;
-            animation: fadeIn 0.8s ease-out;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background: #ffffff;
         }
 
-        header {
-            padding: 30px 40px;
+        #sissa-rating-container header {
+            padding: 20px 30px;
             border-bottom: 1px solid #f1f1f1;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .header-content h1 {
+        #sissa-rating-container h2 {
             margin: 0;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-color);
+            font-size: 1.5rem;
+            color: #2c3e50;
         }
 
-        .refresh-info {
+        #sissa-rating-container .refresh-info {
             font-size: 0.85rem;
-            color: var(--subtext-color);
-            margin-top: 5px;
+            color: #636e72;
         }
 
-        .search-wrapper {
+        #sissa-rating-container .search-wrapper {
             position: relative;
         }
 
-        .search-wrapper input {
-            padding: 10px 15px;
-            padding-left: 35px;
+        #sissa-rating-container input[type="text"] {
+            padding: 8px 12px;
             border-radius: 20px;
             border: 1px solid #e1e1e1;
-            font-family: 'Outfit', sans-serif;
             font-size: 0.95rem;
-            background: #fdfdfd;
             width: 200px;
-            transition: all 0.2s;
         }
 
-        .search-wrapper input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-            width: 240px;
+        /* Tabs */
+        #sissa-rating-container .tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f1f1f1;
+            padding: 10px 30px 0;
         }
 
-        .search-icon {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--subtext-color);
-            width: 14px;
-            height: 14px;
+        #sissa-rating-container .tab-btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #636e72;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -4px;
         }
 
-        .table-wrapper {
+        #sissa-rating-container .tab-btn.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+        }
+
+        /* Table */
+        #sissa-rating-container .table-wrapper {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            /* iOS Smooth Scroll */
+            width: 100%;
+            display: block;
+            max-height: 80vh;
+            /* Limit height to trigger vertical scroll if needed, or browser scroll */
         }
 
-        table {
+        #sissa-rating-container table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
         }
 
-        th {
-            padding: 18px 25px;
+        /* Sticky Header Core Logic */
+        #sissa-rating-container th {
+            padding: 15px 20px;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--subtext-color);
+            font-size: 0.85rem;
+            color: #636e72;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             cursor: pointer;
-            transition: all 0.2s;
             background: #fff;
-            position: sticky;
-            top: 0;
             user-select: none;
             white-space: nowrap;
+            /* Prevent headers wrapping */
+            position: sticky;
+            /* Make headers sticky */
+            top: 0;
+            /* Stick to top */
+            z-index: 10;
+            /* Ensure on top of normal cells */
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+            /* Slight shadow for separation */
         }
 
-        th:hover {
-            color: var(--primary-color);
-            background-color: #fcfcfc;
-        }
-
-        th.sort-active {
-            color: var(--primary-color);
-            background-color: #f1f3f5;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        th[data-sort]::after {
-            content: '↕';
-            display: inline-block;
-            margin-left: 8px;
-            opacity: 0.3;
-            font-size: 0.8rem;
-            transition: opacity 0.2s;
-        }
-
-        th.sort-active::after {
-            opacity: 1;
-            content: '↓';
-            color: var(--accent-color);
-        }
-
-        th.sort-active.sort-asc::after {
-            content: '↑';
-        }
-
-        th.rank-col::after {
-            content: none;
-        }
-
-        td {
-            padding: 16px 25px;
-            border-bottom: 1px solid #f5f6fa;
-            font-size: 1rem;
-            vertical-align: middle;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tbody tr:hover {
-            background-color: #fafbfc;
-        }
-
-        td.col-highlight {
-            background-color: #fbfbfc;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 500;
-            position: relative;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: var(--accent-color);
-        }
-
-        .rank-col {
-            color: var(--subtext-color);
-            font-weight: 500;
-            width: 50px;
-            text-align: center;
-        }
-
-        .col-rating {
-            width: 100px;
-            text-align: center;
-        }
-
-        .col-change {
-            width: 100px;
-            text-align: center;
-        }
-
-        .col-games {
-            width: 100px;
-            text-align: center;
-        }
-
-        .rating-val {
-            display: inline-block;
-            font-weight: 400;
-            color: var(--text-color);
-            min-width: 40px;
-            text-align: center;
-            /* Keep numbers aligned */
-        }
-
-        .rating-val.high {
-            font-weight: 700;
+        #sissa-rating-container th:hover {
             color: #2c3e50;
         }
 
-        .change {
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        #sissa-rating-container th.sort-active {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
         }
 
-        .change.positive {
-            color: var(--success-color);
+        #sissa-rating-container th.sort-active.sort-asc::after {
+            content: '↑';
+            color: #3498db;
+            margin-left: 5px;
         }
 
-        .change.negative {
-            color: var(--danger-color);
+        #sissa-rating-container th.sort-active.sort-desc::after {
+            content: '↓';
+            color: #3498db;
+            margin-left: 5px;
         }
 
-        .change.neutral {
-            color: var(--neutral-color);
+        #sissa-rating-container td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f5f6fa;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            /* Prevent data wrapping */
         }
 
-        .games {
-            color: var(--subtext-color);
+        #sissa-rating-container tr:last-child td {
+            border-bottom: none;
+        }
+
+        #sissa-rating-container a {
+            text-decoration: none;
+            color: #2c3e50;
             font-weight: 500;
         }
 
-        /* Loading */
-        #loading {
-            padding: 60px;
-            text-align: center;
-            color: var(--subtext-color);
+        #sissa-rating-container a:hover {
+            color: #3498db;
         }
 
-        .no-results {
+        /* Column Styles */
+        #sissa-rating-container .col-rank {
+            width: 40px;
+            min-width: 40px;
+            text-align: center;
+            color: #b2bec3;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        #sissa-rating-container .col-rating {
+            width: 100px;
+            text-align: center;
+        }
+
+        #sissa-rating-container .col-change {
+            width: 100px;
+            text-align: center;
+        }
+
+        #sissa-rating-container .col-games {
+            width: 100px;
+            text-align: center;
+        }
+
+        #sissa-rating-container .col-title {
+            width: 60px;
+            text-align: center;
+            font-weight: 600;
+            color: #636e72;
+        }
+
+        #sissa-rating-container .col-fed {
+            width: 60px;
+            text-align: center;
+            color: #636e72;
+            font-size: 0.9em;
+        }
+
+        #sissa-rating-container .col-yob {
+            width: 60px;
+            text-align: center;
+            color: #636e72;
+            font-size: 0.9em;
+        }
+
+        #sissa-rating-container .rating-val {
+            display: inline-block;
+            font-weight: 400;
+            color: #2d3436;
+            min-width: 40px;
+            text-align: center;
+        }
+
+
+
+        #sissa-rating-container .change {
+            font-weight: 600;
+        }
+
+        #sissa-rating-container .change.positive {
+            color: #00b894;
+        }
+
+        #sissa-rating-container .change.negative {
+            color: #d63031;
+        }
+
+        #sissa-rating-container .change.neutral {
+            color: #b2bec3;
+        }
+
+        #sissa-rating-container .col-highlight {
+            background-color: #fbfbfc;
+        }
+
+        #sissa-rating-container .hidden-col {
+            display: none;
+        }
+
+        #sissa-rating-container #loading,
+        #sissa-rating-container #no-results {
             padding: 40px;
             text-align: center;
-            color: var(--subtext-color);
-            font-style: italic;
-            display: none;
+            color: #636e72;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* Mobile Responsiveness */
         @media (max-width: 600px) {
-            .container {
-                border-radius: 0;
-                box-shadow: none;
-            }
-
-            th,
-            td {
-                padding: 12px 15px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            header {
+            #sissa-rating-container header {
+                padding: 15px;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
             }
 
-            .search-wrapper input {
+            #sissa-rating-container input[type="text"] {
                 width: 100%;
-                box-sizing: border-box;
+                /* Full width search */
             }
 
-            .search-wrapper input:focus {
-                width: 100%;
+            #sissa-rating-container table {
+                min-width: 600px;
+                /* Force table width to be larger than screen to trigger scroll */
             }
-        }
 
-        /* Tab Styling */
-        .tabs {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #f1f1f1;
-            padding-bottom: 2px;
-        }
+            #sissa-rating-container th,
+            #sissa-rating-container td {
+                padding: 10px 8px;
+                /* Tighter padding */
+                font-size: 0.85rem;
+            }
 
-        .tab-btn {
-            background: none;
-            border: none;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--subtext-color);
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -4px;
-            /* overlap border */
-        }
+            /* Sticky Logic */
+            /* Rank Column: Sticky at Left 0 */
+            #sissa-rating-container .col-rank {
+                position: sticky;
+                left: 0;
+                background-color: #fff;
+                z-index: 5;
+                /* Lower than corner header */
+                border-right: 1px solid #f1f1f1;
+            }
 
-        .tab-btn:hover {
-            color: var(--primary-color);
-        }
+            /* Name Column: Sticky at Left 40px */
+            #sissa-rating-container .col-name {
+                position: sticky;
+                left: 40px;
+                background-color: #fff;
+                z-index: 5;
+                /* Lower than corner header */
+                border-right: 1px solid #f1f1f1;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+                /* Shadow only on the Name column edge */
 
-        .tab-btn.active {
-            color: var(--accent-color);
-            border-bottom: 3px solid var(--accent-color);
-        }
+                /* WRAPPING LOGIC */
+                width: 110px;
+                /* Constrain width */
+                max-width: 110px;
+                white-space: normal !important;
+                /* Force wrap */
+                word-wrap: break-word;
+                /* Break long names if needed */
+                line-height: 1.25;
+                /* Tighter lines */
+                vertical-align: middle;
+            }
 
-        .hidden-col {
-            display: none;
+            /* Adjust header Z-indices for Multi-Sticky Intersections */
+
+            /* Standard Sticky Headers (Top only) */
+            #sissa-rating-container th {
+                z-index: 10;
+            }
+
+            /* CORNER HEADERS (Top AND Left Sticky) */
+            /* These need the HIGHEST z-index to stay on top of everything */
+            #sissa-rating-container th.col-rank {
+                z-index: 20;
+                left: 0;
+                /* Enforce left stickiness for header specifically */
+            }
+
+            #sissa-rating-container th.col-name {
+                z-index: 20;
+                left: 40px;
+                /* Enforce left stickiness for header specifically */
+            }
+
+            #sissa-rating-container .col-title {
+                width: 40px;
+                /* Squeeze title slightly */
+            }
+
+            #sissa-rating-container h2 {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div id="sissa-rating-container">
         <header>
-            <div class="header-content">
-                <h1>SISSA Ratinglijst</h1>
-                <div class="refresh-info" id="last-updated">Laden...</div>
+            <div>
+                <h2>Ratinglijst</h2>
+                <div class="refresh-info" id="sissa-last-updated">Laden...</div>
             </div>
             <div class="search-wrapper">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" id="searchInput" placeholder="Zoek speler..." onkeyup="filterTable()">
+                <input type="text" id="sissa-searchInput" placeholder="Zoek speler..." onkeyup="sissaFilterTable()">
             </div>
         </header>
 
-        <!-- Tabs -->
-        <div style="padding: 0 40px; margin-top: 20px;">
-            <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab('knsb')" id="tab-knsb">KNSB</button>
-                <button class="tab-btn" onclick="switchTab('fide')" id="tab-fide">FIDE</button>
-            </div>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="sissaSwitchTab('knsb')" id="sissa-tab-knsb">KNSB</button>
+            <button class="tab-btn" onclick="sissaSwitchTab('fide')" id="sissa-tab-fide">FIDE</button>
         </div>
 
-        <div id="loading">Gegevens laden...</div>
+        <div id="sissa-loading">Gegevens laden...</div>
 
-        <div class="table-wrapper" id="content" style="display: none;">
-            <table id="rating-table">
+        <div class="table-wrapper" id="sissa-content" style="display: none;">
+            <table>
                 <thead>
                     <tr>
-                        <th class="rank-col">#</th>
-                        <th onclick="sortTable('name')" data-sort="name">Naam</th>
-                        <th class="col-title" onclick="sortTable('title')" data-sort="title">Titel</th>
-                        <th class="col-fed" onclick="sortTable('video')" data-sort="country">Fed</th>
-                        <th class="col-yob" onclick="sortTable('birthday')" data-sort="birthday">Geb</th>
+                        <th class="col-rank">#</th>
+                        <th class="col-name" onclick="sissaSortTable('name')" data-sort="name">Naam</th>
+                        <th class="col-title" onclick="sissaSortTable('title')" data-sort="title">Titel</th>
 
-                        <!-- FIDE Group -->
-                        <th class="col-fide hidden-col col-rating" onclick="sortTable('fide')" data-sort="fide">FIDE
+                        <!-- FIDE -->
+                        <th class="col-fide hidden-col col-rating" onclick="sissaSortTable('fide')" data-sort="fide">
+                            FIDE
                         </th>
-                        <th class="col-fide hidden-col col-change" onclick="sortTable('fide_change')"
+                        <th class="col-fide hidden-col col-change" onclick="sissaSortTable('fide_change')"
                             data-sort="fide_change">+/-
                         </th>
-                        <th class="col-fide hidden-col col-games" onclick="sortTable('fide_games')"
+                        <th class="col-fide hidden-col col-games" onclick="sissaSortTable('fide_games')"
                             data-sort="fide_games">Partijen
                         </th>
 
-                        <!-- KNSB Group -->
-                        <th class="col-knsb col-rating" onclick="sortTable('rating')" data-sort="rating">KNSB</th>
-                        <th class="col-knsb col-change" onclick="sortTable('change')" data-sort="change">+/-</th>
-                        <th class="col-knsb col-games" onclick="sortTable('games')" data-sort="games">Partijen</th>
+                        <!-- KNSB -->
+                        <th class="col-knsb col-rating" onclick="sissaSortTable('rating')" data-sort="rating">KNSB</th>
+                        <th class="col-knsb col-change" onclick="sissaSortTable('change')" data-sort="change">+/-</th>
+                        <th class="col-knsb col-games" onclick="sissaSortTable('games')" data-sort="games">Partijen</th>
+
+                        <th class="col-fed" onclick="sissaSortTable('video')" data-sort="country">Nationaliteit</th>
+                        <th class="col-yob" onclick="sissaSortTable('birthday')" data-sort="birthday">Geboortedatum</th>
+                        <th class="col-gender" onclick="sissaSortTable('gender')" data-sort="gender">Geslacht</th>
                     </tr>
                 </thead>
-                <tbody id="player-list">
-                    <!-- Rows will be injected here -->
-                </tbody>
+                <tbody id="sissa-player-list"></tbody>
             </table>
-            <div id="no-results" class="no-results">Geen spelers gevonden.</div>
+            <div id="sissa-no-results" style="display:none">Geen spelers gevonden.</div>
         </div>
     </div>
 
     <script>
-        let playersData = [];
-        let currentSort = { key: 'rating', dir: 'desc' };
-        let activeTab = 'knsb'; // Default
+        // Use local JSON for index.html
+        const DATA_URL = 'sissa_ratings.json';
+
+        let sissaPlayers = [];
+        let sissaSort = { key: 'rating', dir: 'desc' };
+        let sissaActiveTab = 'knsb';
 
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('sissa_ratings.json')
+            fetch(DATA_URL)
                 .then(response => {
                     if (!response.ok) throw new Error('Data niet gevonden');
                     return response.json();
                 })
                 .then(data => {
-                    document.getElementById('loading').style.display = 'none';
-                    document.getElementById('content').style.display = 'block';
+                    document.getElementById('sissa-loading').style.display = 'none';
+                    document.getElementById('sissa-content').style.display = 'block';
 
                     const date = new Date(data.timestamp);
-                    document.getElementById('last-updated').innerText = 'Laatste update: ' + date.toLocaleDateString('nl-NL');
+                    document.getElementById('sissa-last-updated').innerText = 'Update: ' + date.toLocaleDateString('nl-NL');
 
-                    playersData = data.players;
-                    renderTable();
+                    sissaPlayers = data.players;
+                    sissaRenderTable();
                 })
                 .catch(error => {
-                    document.getElementById('loading').innerHTML = 'Fout bij het laden van de gegevens.<br><small>' + error.message + '</small>';
+                    console.error(error);
+                    document.getElementById('sissa-loading').innerHTML = 'Kon gegevens niet laden. Check console.';
                 });
         });
 
-        function switchTab(tab) {
-            activeTab = tab;
+        function sissaSwitchTab(tab) {
+            sissaActiveTab = tab;
+            document.querySelectorAll('#sissa-rating-container .tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sissa-tab-' + tab).classList.add('active');
 
-            // Buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('tab-' + tab).classList.add('active');
+            // Default sorts
+            if (tab === 'fide') sissaSort = { key: 'fide', dir: 'desc' };
+            else sissaSort = { key: 'rating', dir: 'desc' };
 
-            // Set default sort for the tab (improves UX)
-            if (tab === 'fide') {
-                currentSort = { key: 'fide', dir: 'desc' };
-            } else {
-                currentSort = { key: 'rating', dir: 'desc' };
-            }
-
-            renderTable();
+            sissaRenderTable();
         }
 
-        function renderTable(data = playersData) {
-            const tbody = document.getElementById('player-list');
-            const noResults = document.getElementById('no-results');
-
+        function sissaRenderTable(data = sissaPlayers) {
+            const tbody = document.getElementById('sissa-player-list');
             tbody.innerHTML = '';
 
             if (data.length === 0) {
-                noResults.style.display = 'block';
+                document.getElementById('sissa-no-results').style.display = 'block';
                 return;
             } else {
-                noResults.style.display = 'none';
+                document.getElementById('sissa-no-results').style.display = 'none';
             }
 
-            // Manage Column Visibility
-            const isFide = activeTab === 'fide';
+            const isFide = sissaActiveTab === 'fide';
+            const container = document.getElementById('sissa-rating-container');
+            container.querySelectorAll('.col-fide').forEach(el => el.style.display = isFide ? 'table-cell' : 'none');
+            container.querySelectorAll('.col-knsb').forEach(el => el.style.display = !isFide ? 'table-cell' : 'none');
 
-            // Toggle Headers
-            document.querySelectorAll('.col-fide').forEach(el => el.style.display = isFide ? 'table-cell' : 'none');
-            document.querySelectorAll('.col-knsb').forEach(el => el.style.display = !isFide ? 'table-cell' : 'none');
-
-            // Apply sorting
+            // Sort
             data.sort((a, b) => {
                 let valA, valB;
-
-                switch (currentSort.key) {
-                    case 'name':
-                        valA = a.name.toLowerCase();
-                        valB = b.name.toLowerCase();
-                        break;
-                    case 'title':
-                        valA = (a.title || '').toLowerCase();
-                        valB = (b.title || '').toLowerCase();
-                        break;
-                    case 'country':
-                        valA = (a.country || '').toLowerCase();
-                        valB = (b.country || '').toLowerCase();
-                        break;
-                    case 'birthday':
-                        valA = parseInt(a.birthday) || 0;
-                        valB = parseInt(b.birthday) || 0;
-                        break;
-                    case 'fide':
-                        valA = parseInt(a.fide_rating) || 0;
-                        valB = parseInt(b.fide_rating) || 0;
-                        break;
-                    case 'fide_change':
-                        valA = parseFloat(a.fide_change) || 0;
-                        valB = parseFloat(b.fide_change) || 0;
-                        break;
-                    case 'fide_games':
-                        valA = parseInt(a.fide_games) || 0;
-                        valB = parseInt(b.fide_games) || 0;
-                        break;
-                    case 'rating':
-                        valA = parseInt(a.current_rating) || 0;
-                        valB = parseInt(b.current_rating) || 0;
-                        break;
-                    case 'change':
-                        valA = parseInt(a.rating_change) || 0;
-                        valB = parseInt(b.rating_change) || 0;
-                        break;
-                    case 'games':
-                        valA = parseInt(a.games_played) || 0;
-                        valB = parseInt(b.games_played) || 0;
-                        break;
+                switch (sissaSort.key) {
+                    case 'name': valA = a.name.toLowerCase(); valB = b.name.toLowerCase(); break;
+                    case 'title': valA = (a.title || '').toLowerCase(); valB = (b.title || '').toLowerCase(); break;
+                    case 'country': valA = (a.country || '').toLowerCase(); valB = (b.country || '').toLowerCase(); break;
+                    case 'birthday': valA = parseInt(a.birthday) || 0; valB = parseInt(b.birthday) || 0; break;
+                    case 'gender': valA = (a.gender || '').toLowerCase(); valB = (b.gender || '').toLowerCase(); break;
+                    case 'fide': valA = parseInt(a.fide_rating) || 0; valB = parseInt(b.fide_rating) || 0; break;
+                    case 'fide_change': valA = parseFloat(a.fide_change) || 0; valB = parseFloat(b.fide_change) || 0; break;
+                    case 'fide_games': valA = parseInt(a.fide_games) || 0; valB = parseInt(b.fide_games) || 0; break;
+                    case 'rating': valA = parseInt(a.current_rating) || 0; valB = parseInt(b.current_rating) || 0; break;
+                    case 'change': valA = parseInt(a.rating_change) || 0; valB = parseInt(b.rating_change) || 0; break;
+                    case 'games': valA = parseInt(a.games_played) || 0; valB = parseInt(b.games_played) || 0; break;
                 }
-
-                if (valA < valB) return currentSort.dir === 'asc' ? -1 : 1;
-                if (valA > valB) return currentSort.dir === 'asc' ? 1 : -1;
+                if (valA < valB) return sissaSort.dir === 'asc' ? -1 : 1;
+                if (valA > valB) return sissaSort.dir === 'asc' ? 1 : -1;
                 return 0;
             });
 
-            // Update Header Styling
-            document.querySelectorAll('th').forEach(th => {
-                th.classList.remove('sort-active', 'sort-asc', 'sort-desc');
-            });
+            // Update Headers
+            container.querySelectorAll('th').forEach(th => th.className = th.className.replace(/sort-(active|asc|desc)/g, '').trim());
+            const activeTh = container.querySelector(`th[data-sort="${sissaSort.key}"]`);
+            if (activeTh) activeTh.classList.add('sort-active', sissaSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
 
-            const activeHeader = document.querySelector(`th[data-sort="${currentSort.key}"]`);
-            if (activeHeader) {
-                activeHeader.classList.add('sort-active');
-                activeHeader.classList.add(currentSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
-            }
-
+            // Render Rows
             data.forEach((player, index) => {
                 const tr = document.createElement('tr');
-
-                // Hide/Show logic for cells
                 const fideStyle = isFide ? '' : 'display: none;';
                 const knsbStyle = !isFide ? '' : 'display: none;';
 
-                let changeVal = parseInt(player.rating_change) || 0;
-                let changeClass = 'neutral';
-                let changeText = changeVal;
+                // KNSB
+                let kVal = parseInt(player.rating_change) || 0;
+                let kCls = kVal > 0 ? 'positive' : (kVal < 0 ? 'negative' : 'neutral');
+                let kText = kVal > 0 ? '+' + kVal : (kVal < 0 ? kVal : '-');
 
-                if (changeVal > 0) {
-                    changeClass = 'positive';
-                    changeText = '+' + changeVal;
-                } else if (changeVal < 0) {
-                    changeClass = 'negative';
-                } else {
-                    changeText = '-';
-                }
+                let rVal = parseInt(player.current_rating) || 0;
+                let rText = rVal > 0 ? rVal : 'Geen';
+                // Removed high logic
 
-                let ratingClass = 'rating-pill';
-                let ratingText = player.current_rating;
-                let ratingVal = parseInt(player.current_rating);
+                // FIDE
+                let fVal = parseInt(player.fide_rating) || 0;
+                let fText = fVal > 0 ? fVal : '-';
 
-                if (!player.current_rating || isNaN(ratingVal) || ratingVal === 0) {
-                    ratingText = 'Geen';
-                    ratingClass += ' neutral'; // You might need to add css for this or reuse existing
-                    ratingClass = 'rating-pill'; // Reset if needed, or just default style
-                    // Let's style it bit different? 
-                    // The default pill is grey (#dfe6e9), which fits "Geen" well.
-                } else if (ratingVal >= 2000) {
-                    ratingClass += ' high';
-                }
+                let fcVal = parseFloat(player.fide_change) || 0;
+                let fcCls = fcVal > 0 ? 'positive' : (fcVal < 0 ? 'negative' : 'neutral');
+                let fcText = fcVal > 0 ? '+' + fcVal : (fcVal < 0 ? fcVal : '-');
 
-                // FIDE Rating style
-                let fideVal = parseInt(player.fide_rating) || 0;
-                let fideText = fideVal > 0 ? fideVal : '-';
-                let fideClass = '';
-                if (fideVal >= 2000) fideClass = 'font-weight: 600; color: #2c3e50;';
+                const hl = k => sissaSort.key === k ? 'col-highlight' : '';
 
-                // FIDE Change Styling
-                let fideChangeVal = parseFloat(player.fide_change) || 0;
-                let fideChangeClass = 'neutral';
-                let fideChangeText = player.fide_change ? player.fide_change : '-';
-
-                if (fideChangeVal > 0) {
-                    fideChangeClass = 'positive';
-                    if (!fideChangeText.startsWith('+')) fideChangeText = '+' + fideChangeText;
-                } else if (fideChangeVal < 0) {
-                    fideChangeClass = 'negative';
-                } else {
-                    fideChangeText = '-';
-                }
-
-                let fideGames = player.fide_games || '-';
-
-                // Highlight cells matching sort key
-                const hl = (key) => currentSort.key === key ? 'col-highlight' : '';
-
-                // Rank is index + 1
                 tr.innerHTML = `
-                    <td class="rank-col">${index + 1}</td>
-                    <td class="${hl('name')}"><a href="${player.profile_url}" target="_blank">${player.name}</a></td>
+                    <td class="col-rank">${index + 1}</td>
+                    <td class="${hl('name')} col-name"><a href="${player.profile_url}" target="_blank">${player.name}</a></td>
                     <td class="${hl('title')} col-title">${player.title || ''}</td>
+                    
+                    <td class="${hl('fide')} col-rating" style="${fideStyle}"><span class="rating-val">${fText}</span></td>
+                    <td class="${hl('fide_change')} col-change" style="${fideStyle}"><div class="change ${fcCls}">${fcText}</div></td>
+                    <td class="${hl('fide_games')} col-games" style="${fideStyle}"><span class="games">${player.fide_games || '-'}</span></td>
+
+                    <td class="${hl('rating')} col-rating" style="${knsbStyle}"><span class="rating-val">${rText}</span></td>
+                    <td class="${hl('change')} col-change" style="${knsbStyle}"><div class="change ${kCls}">${kText}</div></td>
+                    <td class="${hl('games')} col-games" style="${knsbStyle}"><span class="games">${player.games_played}</span></td>
+
                     <td class="${hl('country')} col-fed">${player.country || ''}</td>
                     <td class="${hl('birthday')} col-yob">${player.birthday || ''}</td>
-                    
-                    <td class="${hl('fide')} col-rating" style="${fideStyle}"><span class="${fideVal >= 2000 ? 'rating-val high' : 'rating-val'}">${fideText}</span></td>
-                    <td class="${hl('fide_change')} col-change" style="${fideStyle}"><div class="change ${fideChangeClass}">${fideChangeText}</div></td>
-                    <td class="${hl('fide_games')} col-games" style="${fideStyle}"><span class="games">${fideGames}</span></td>
-                    
-                    <td class="${hl('rating')} col-rating" style="${knsbStyle}"><span class="${ratingVal >= 2000 ? 'rating-val high' : 'rating-val'}">${ratingText}</span></td>
-                    <td class="${hl('change')} col-change" style="${knsbStyle}"><div class="change ${changeClass}">${changeText}</div></td>
-                    <td class="${hl('games')} col-games" style="${knsbStyle}"><span class="games">${player.games_played}</span></td>
+                    <td class="${hl('gender')} col-gender">${player.gender || ''}</td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
-        function sortTable(key) {
-            if (currentSort.key === key) {
-                currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
-            } else {
-                currentSort.key = key;
-                // Default directions
-                if (key === 'name') currentSort.dir = 'asc';
-                else currentSort.dir = 'desc'; // numbers desc usually
+        function sissaSortTable(key) {
+            if (sissaSort.key === key) sissaSort.dir = sissaSort.dir === 'asc' ? 'desc' : 'asc';
+            else {
+                sissaSort.key = key;
+                sissaSort.dir = (key === 'name') ? 'asc' : 'desc';
             }
-
-            // Re-render with current filter applied
-            filterTable();
+            sissaRenderTable();
         }
 
-        function filterTable() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-
-            const filtered = playersData.filter(player => {
-                return player.name.toLowerCase().includes(query);
-            });
-
-            renderTable(filtered);
+        function sissaFilterTable() {
+            const q = document.getElementById('sissa-searchInput').value.toLowerCase();
+            const filtered = sissaPlayers.filter(p => p.name.toLowerCase().includes(q));
+            sissaRenderTable(filtered);
         }
     </script>
-
 </body>
 
 </html>

@@ -1,7 +1,10 @@
 <!-- 
-    SISSA Rating Viewer - WordPress Snippet
+    SISSA Rating Viewer - WordPress Snippet (FINAL MOBILE SCROLL + STICKY RANK/NAME + WRAPPING + STICKY HEADER)
     1. Paste this into a "Custom HTML" block in WordPress.
-    2. Ensure the "DATA_URL" const points to your GitHub raw JSON file.
+    2. Includes Rank (#) column.
+    3. Rank and Name are BOTH sticky on mobile (Horizontal Scroll).
+    4. Header is sticky on ALL devices (Vertical Scroll).
+    5. Names wrap to new lines on mobile.
 -->
 <style>
     /* Styling Scoped to Rating Container */
@@ -80,6 +83,12 @@
     /* Table */
     #sissa-rating-container .table-wrapper {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* iOS Smooth Scroll */
+        width: 100%;
+        display: block;
+        max-height: 80vh;
+        /* Limit height to trigger vertical scroll if needed, or browser scroll */
     }
 
     #sissa-rating-container table {
@@ -88,15 +97,26 @@
         text-align: left;
     }
 
+    /* Sticky Header Core Logic */
     #sissa-rating-container th {
         padding: 15px 20px;
         font-weight: 600;
         font-size: 0.85rem;
         color: #636e72;
-        text-transform: uppercase;
+        /* text-transform: uppercase; REMOVED */
         cursor: pointer;
         background: #fff;
         user-select: none;
+        white-space: nowrap;
+        /* Prevent headers wrapping */
+        position: sticky;
+        /* Make headers sticky */
+        top: 0;
+        /* Stick to top */
+        z-index: 10;
+        /* Ensure on top of normal cells */
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+        /* Slight shadow for separation */
     }
 
     #sissa-rating-container th:hover {
@@ -124,6 +144,8 @@
         padding: 12px 20px;
         border-bottom: 1px solid #f5f6fa;
         font-size: 0.95rem;
+        white-space: nowrap;
+        /* Prevent data wrapping */
     }
 
     #sissa-rating-container tr:last-child td {
@@ -140,7 +162,16 @@
         color: #3498db;
     }
 
-    /* Helpers */
+    /* Column Styles */
+    #sissa-rating-container .col-rank {
+        width: 40px;
+        min-width: 40px;
+        text-align: center;
+        color: #b2bec3;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
     #sissa-rating-container .col-rating {
         width: 100px;
         text-align: center;
@@ -177,6 +208,13 @@
         font-size: 0.9em;
     }
 
+    #sissa-rating-container .col-gender {
+        width: 40px;
+        text-align: center;
+        color: #636e72;
+        font-size: 0.9em;
+    }
+
     #sissa-rating-container .rating-val {
         display: inline-block;
         font-weight: 400;
@@ -185,10 +223,7 @@
         text-align: center;
     }
 
-    #sissa-rating-container .rating-val.high {
-        font-weight: 700;
-        color: #2c3e50;
-    }
+
 
     #sissa-rating-container .change {
         font-weight: 600;
@@ -220,6 +255,97 @@
         text-align: center;
         color: #636e72;
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+        #sissa-rating-container header {
+            padding: 15px;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        #sissa-rating-container input[type="text"] {
+            width: 100%;
+            /* Full width search */
+        }
+
+        #sissa-rating-container table {
+            min-width: 600px;
+            /* Force table width to be larger than screen to trigger scroll */
+        }
+
+        #sissa-rating-container th,
+        #sissa-rating-container td {
+            padding: 10px 8px;
+            /* Tighter padding */
+            font-size: 0.85rem;
+        }
+
+        /* Sticky Logic */
+        /* Rank Column: Sticky at Left 0 */
+        #sissa-rating-container .col-rank {
+            position: sticky;
+            left: 0;
+            background-color: #fff;
+            z-index: 5;
+            /* Lower than corner header */
+            border-right: 1px solid #f1f1f1;
+        }
+
+        /* Name Column: Sticky at Left 40px */
+        #sissa-rating-container .col-name {
+            position: sticky;
+            left: 40px;
+            background-color: #fff;
+            z-index: 5;
+            /* Lower than corner header */
+            border-right: 1px solid #f1f1f1;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+            /* Shadow only on the Name column edge */
+
+            /* WRAPPING LOGIC */
+            width: 110px;
+            /* Constrain width */
+            max-width: 110px;
+            white-space: normal !important;
+            /* Force wrap */
+            word-wrap: break-word;
+            /* Break long names if needed */
+            line-height: 1.25;
+            /* Tighter lines */
+            vertical-align: middle;
+        }
+
+        /* Adjust header Z-indices for Multi-Sticky Intersections */
+
+        /* Standard Sticky Headers (Top only) */
+        #sissa-rating-container th {
+            z-index: 10;
+        }
+
+        /* CORNER HEADERS (Top AND Left Sticky) */
+        /* These need the HIGHEST z-index to stay on top of everything */
+        #sissa-rating-container th.col-rank {
+            z-index: 20;
+            left: 0;
+            /* Enforce left stickiness for header specifically */
+        }
+
+        #sissa-rating-container th.col-name {
+            z-index: 20;
+            left: 40px;
+            /* Enforce left stickiness for header specifically */
+        }
+
+        #sissa-rating-container .col-title {
+            width: 40px;
+            /* Squeeze title slightly */
+        }
+
+        #sissa-rating-container h2 {
+            font-size: 1.25rem;
+        }
+    }
 </style>
 
 <div id="sissa-rating-container">
@@ -244,10 +370,9 @@
         <table>
             <thead>
                 <tr>
-                    <th onclick="sissaSortTable('name')" data-sort="name">Naam</th>
+                    <th class="col-rank">#</th>
+                    <th class="col-name" onclick="sissaSortTable('name')" data-sort="name">Naam</th>
                     <th class="col-title" onclick="sissaSortTable('title')" data-sort="title">Titel</th>
-                    <th class="col-fed" onclick="sissaSortTable('video')" data-sort="country">Fed</th>
-                    <th class="col-yob" onclick="sissaSortTable('birthday')" data-sort="birthday">Geb</th>
 
                     <!-- FIDE -->
                     <th class="col-fide hidden-col col-rating" onclick="sissaSortTable('fide')" data-sort="fide">FIDE
@@ -263,6 +388,10 @@
                     <th class="col-knsb col-rating" onclick="sissaSortTable('rating')" data-sort="rating">KNSB</th>
                     <th class="col-knsb col-change" onclick="sissaSortTable('change')" data-sort="change">+/-</th>
                     <th class="col-knsb col-games" onclick="sissaSortTable('games')" data-sort="games">Partijen</th>
+
+                    <th class="col-fed" onclick="sissaSortTable('video')" data-sort="country">Nationaliteit</th>
+                    <th class="col-yob" onclick="sissaSortTable('birthday')" data-sort="birthday">Geboortedatum</th>
+                    <th class="col-gender" onclick="sissaSortTable('gender')" data-sort="gender">Geslacht</th>
                 </tr>
             </thead>
             <tbody id="sissa-player-list"></tbody>
@@ -339,6 +468,7 @@
                 case 'title': valA = (a.title || '').toLowerCase(); valB = (b.title || '').toLowerCase(); break;
                 case 'country': valA = (a.country || '').toLowerCase(); valB = (b.country || '').toLowerCase(); break;
                 case 'birthday': valA = parseInt(a.birthday) || 0; valB = parseInt(b.birthday) || 0; break;
+                case 'gender': valA = (a.gender || '').toLowerCase(); valB = (b.gender || '').toLowerCase(); break;
                 case 'fide': valA = parseInt(a.fide_rating) || 0; valB = parseInt(b.fide_rating) || 0; break;
                 case 'fide_change': valA = parseFloat(a.fide_change) || 0; valB = parseFloat(b.fide_change) || 0; break;
                 case 'fide_games': valA = parseInt(a.fide_games) || 0; valB = parseInt(b.fide_games) || 0; break;
@@ -357,7 +487,7 @@
         if (activeTh) activeTh.classList.add('sort-active', sissaSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
 
         // Render Rows
-        data.forEach(player => {
+        data.forEach((player, index) => {
             const tr = document.createElement('tr');
             const fideStyle = isFide ? '' : 'display: none;';
             const knsbStyle = !isFide ? '' : 'display: none;';
@@ -383,10 +513,9 @@
             const hl = k => sissaSort.key === k ? 'col-highlight' : '';
 
             tr.innerHTML = `
-                <td class="${hl('name')}"><a href="${player.profile_url}" target="_blank">${player.name}</a></td>
+                <td class="col-rank">${index + 1}</td>
+                <td class="${hl('name')} col-name"><a href="${player.profile_url}" target="_blank">${player.name}</a></td>
                 <td class="${hl('title')} col-title">${player.title || ''}</td>
-                <td class="${hl('country')} col-fed">${player.country || ''}</td>
-                <td class="${hl('birthday')} col-yob">${player.birthday || ''}</td>
                 
                 <td class="${hl('fide')} col-rating" style="${fideStyle}"><span class="${fVal >= 2000 ? 'rating-val high' : 'rating-val'}">${fText}</span></td>
                 <td class="${hl('fide_change')} col-change" style="${fideStyle}"><div class="change ${fcCls}">${fcText}</div></td>
@@ -395,6 +524,10 @@
                 <td class="${hl('rating')} col-rating" style="${knsbStyle}"><span class="${rVal >= 2000 ? 'rating-val high' : 'rating-val'}">${rText}</span></td>
                 <td class="${hl('change')} col-change" style="${knsbStyle}"><div class="change ${kCls}">${kText}</div></td>
                 <td class="${hl('games')} col-games" style="${knsbStyle}"><span class="games">${player.games_played}</span></td>
+
+                <td class="${hl('country')} col-fed">${player.country || ''}</td>
+                <td class="${hl('birthday')} col-yob">${player.birthday || ''}</td>
+                <td class="${hl('gender')} col-gender">${player.gender || ''}</td>
             `;
             tbody.appendChild(tr);
         });

@@ -125,6 +125,7 @@ async def scrape_ratings():
             title_el = await row.query_selector("div[data-column-id='3']")
             fed_el = await row.query_selector("div[data-column-id='4']")
             yob_el = await row.query_selector("div[data-column-id='6']")
+            sex_el = await row.query_selector("div[data-column-id='7']")
 
             if name_el and rating_el:
                 name = await name_el.inner_text()
@@ -135,6 +136,7 @@ async def scrape_ratings():
                 title_val = (await title_el.inner_text()).strip() if title_el else ""
                 fed_val = (await fed_el.inner_text()).strip() if fed_el else ""
                 yob_val = (await yob_el.inner_text()).strip() if yob_el else ""
+                sex_val = (await sex_el.inner_text()).strip() if sex_el else ""
 
                 players.append({
                     "name": name,
@@ -145,6 +147,7 @@ async def scrape_ratings():
                     "title": title_val,
                     "country": fed_val,
                     "birthday": yob_val,
+                    "gender": sex_val,
                     # Internal field for processing
                     "_full_profile_url": f"https://ratingviewer.nl{profile_url}"
                 })
@@ -157,25 +160,44 @@ async def scrape_ratings():
             try:
                 await page.goto(player['_full_profile_url'])
 
-                # 1. Get KNSB History (Latest Month)
+                # 1. Get KNSB History (Latest Month) - Optimized using Summary Table
                 try:
-                    # Wait for table
-                    try:
-                        await page.wait_for_selector(".rdt_Table .rdt_TableRow", timeout=3000)
-                    except:
-                        stat_tab = page.get_by_text("Statistieken")
-                        if await stat_tab.count() > 0:
-                            await stat_tab.click()
-                            await page.wait_for_selector(".rdt_Table .rdt_TableRow", timeout=3000)
-
-                    history_rows = await page.query_selector_all(".rdt_Table .rdt_TableRow")
-                    if history_rows:
-                        first_row = history_rows[0]
-                        change_el = await first_row.query_selector("div[data-column-id='3']")
-                        games_el = await first_row.query_selector("div[data-column-id='5']")
-                        
-                        if change_el: player["rating_change"] = (await change_el.inner_text()).strip()
-                        if games_el: player["games_played"] = (await games_el.inner_text()).strip()
+                    # Wait for ANY table to ensure page load
+                    await page.wait_for_selector("table", timeout=5000)
+                    
+                    # Extract Games Played from Summary Table (Cell containing "#Gespeeld")
+                    # Format: "#Gespeeld\n5"
+                    games_cell = await page.query_selector("td:has-text('#Gespeeld')")
+                    if games_cell:
+                        text = await games_cell.inner_text()
+                        # Take the number after the newline
+                        if "\n" in text:
+                            player["games_played"] = text.split("\n")[-1].strip()
+                    
+                    # Extract Rating Change from Calculation Cell
+                    # Format: "Berekening\n\n2702=2692 + 10"
+                    calc_cell = await page.query_selector("td:has-text('Berekening')")
+                    if calc_cell:
+                        text = await calc_cell.inner_text()
+                        # Look for the last numbers " + 10" or " - 5" at the end of the string
+                        # Simple parse: split by space, look for + or -
+                        # Or regex search for [+-]\s?\d+$
+                        import re
+                        change_match = re.search(r'([+-])\s?(\d+)$', text.strip())
+                        if change_match:
+                            sign = change_match.group(1)
+                            val = change_match.group(2)
+                            # Re-construct: +10 or -5
+                            if sign == "+":
+                                player["rating_change"] = val # + is implied or we can add it later if needed, but JSON usually stores raw num key? 
+                                # Current JSON has "15" (positive) or "-20"
+                                # If sign is +, store as "10". If -, store as "-5"
+                                player["rating_change"] = val
+                            else:
+                                player["rating_change"] = f"-{val}"
+                        elif "=" in text:
+                             # Fallback logic if regex fails but we have "A=B +/- C"
+                             pass
 
                 except Exception as e:
                     print(f"  -> Error KNSB stats: {e}")

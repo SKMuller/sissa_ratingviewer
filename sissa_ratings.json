@@ -1,16 +1,17 @@
 {
     "club": "JSV SISSA",
-    "timestamp": "2026-02-05T16:00:36.524421",
+    "timestamp": "2026-02-05T17:16:42.559947",
     "players": [
         {
             "name": "Van Foreest, Jorden",
             "profile_url": "https://ratingviewer.nl/lists/169/players/8313910",
             "current_rating": "2702",
-            "rating_change": "15",
-            "games_played": "31",
+            "rating_change": "10",
+            "games_played": "5",
             "title": "GM",
             "country": "NED",
             "birthday": "1999",
+            "gender": "M",
             "fide_id": "1039784",
             "fide_rating": "2705",
             "fide_games": "2",
@@ -25,6 +26,7 @@
             "title": "GM",
             "country": "NED",
             "birthday": "2001",
+            "gender": "M",
             "fide_id": "1039792",
             "fide_rating": "2519",
             "fide_games": "0",
@@ -39,6 +41,7 @@
             "title": "FM",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1021389",
             "fide_rating": "2146",
             "fide_games": "0",
@@ -53,6 +56,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2003",
+            "gender": "M",
             "fide_id": "1050028",
             "fide_rating": "2088",
             "fide_games": "8",
@@ -67,6 +71,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1990",
+            "gender": "M",
             "fide_id": "1026402",
             "fide_rating": "2125",
             "fide_games": "0",
@@ -81,6 +86,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "1052977",
             "fide_rating": "2023",
             "fide_games": "8",
@@ -95,6 +101,7 @@
             "title": "",
             "country": "IND",
             "birthday": "2001",
+            "gender": "M",
             "fide_id": "429002338",
             "fide_rating": "1978",
             "fide_games": "7",
@@ -109,6 +116,7 @@
             "title": "",
             "country": "BIH",
             "birthday": "1982",
+            "gender": "M",
             "fide_id": "14403285",
             "fide_rating": "2044",
             "fide_games": "0",
@@ -123,6 +131,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "M",
             "fide_id": "1039350",
             "fide_rating": "2018",
             "fide_games": "12",
@@ -137,6 +146,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1067109",
             "fide_rating": "2063",
             "fide_games": "0",
@@ -151,6 +161,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1980",
+            "gender": "M",
             "fide_id": "1059319",
             "fide_rating": "1987",
             "fide_games": "0",
@@ -165,6 +176,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
+            "gender": "M",
             "fide_id": "1060384"
         },
         {
@@ -176,6 +188,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
+            "gender": "M",
             "fide_id": "1046110",
             "fide_rating": "2011",
             "fide_games": "0",
@@ -190,6 +203,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2001",
+            "gender": "M",
             "fide_id": "40120562",
             "fide_rating": "1926",
             "fide_games": "8",
@@ -204,6 +218,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "M",
             "fide_id": "1056506",
             "fide_rating": "1971",
             "fide_games": "0",
@@ -218,6 +233,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1986",
+            "gender": "M",
             "fide_id": "1020978",
             "fide_rating": "2016",
             "fide_games": "0",
@@ -232,6 +248,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1993",
+            "gender": "M",
             "fide_id": "1055615",
             "fide_rating": "1929",
             "fide_games": "9",
@@ -246,6 +263,7 @@
             "title": "",
             "country": "FRA",
             "birthday": "1986",
+            "gender": "M",
             "fide_id": "20653271",
             "fide_rating": "1981",
             "fide_games": "0",
@@ -260,6 +278,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2001",
+            "gender": "M",
             "fide_id": "1098527",
             "fide_rating": "1936",
             "fide_games": "4",
@@ -274,6 +293,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1954",
+            "gender": "M",
             "fide_id": "1049976",
             "fide_rating": "2027",
             "fide_games": "0",
@@ -288,6 +308,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2004",
+            "gender": "M",
             "fide_id": "40114430"
         },
         {
@@ -299,6 +320,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2003",
+            "gender": "M",
             "fide_id": "40104524",
             "fide_rating": "1888",
             "fide_games": "9",
@@ -313,6 +335,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1961",
+            "gender": "M",
             "fide_id": "1011898",
             "fide_rating": "1940",
             "fide_games": "0",
@@ -327,6 +350,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
+            "gender": "M",
             "fide_id": "1043366",
             "fide_rating": "1905",
             "fide_games": "9",
@@ -341,6 +365,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1992",
+            "gender": "M",
             "fide_id": "1085107",
             "fide_rating": "1899",
             "fide_games": "11",
@@ -355,6 +380,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1977",
+            "gender": "M",
             "fide_id": "1030612",
             "fide_rating": "1912",
             "fide_games": "0",
@@ -369,6 +395,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2001",
+            "gender": "M",
             "fide_id": "1052772",
             "fide_rating": "1862",
             "fide_games": "0",
@@ -383,6 +410,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "1033638",
             "fide_rating": "1926",
             "fide_games": "0",
@@ -397,6 +425,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1994",
+            "gender": "M",
             "fide_id": "1056492",
             "fide_rating": "1923",
             "fide_games": "0",
@@ -411,6 +440,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1982",
+            "gender": "M",
             "fide_id": "40108821"
         },
         {
@@ -422,6 +452,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2000",
+            "gender": "M",
             "fide_id": "1096451",
             "fide_rating": "1982",
             "fide_games": "0",
@@ -436,6 +467,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2002",
+            "gender": "M",
             "fide_id": "40102157",
             "fide_rating": "1868",
             "fide_games": "5",
@@ -450,6 +482,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1020960",
             "fide_rating": "1903",
             "fide_games": "0",
@@ -464,6 +497,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1984",
+            "gender": "M",
             "fide_id": "1047965",
             "fide_rating": "1895",
             "fide_games": "0",
@@ -478,6 +512,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "M",
             "fide_id": "1083422",
             "fide_rating": "1858",
             "fide_games": "0",
@@ -492,6 +527,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1984",
+            "gender": "M",
             "fide_id": "40117774",
             "fide_rating": "1868",
             "fide_games": "8",
@@ -506,6 +542,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1989",
+            "gender": "M",
             "fide_id": "1090780"
         },
         {
@@ -517,6 +554,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
+            "gender": "M",
             "fide_id": "40113060"
         },
         {
@@ -528,6 +566,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2000",
+            "gender": "V",
             "fide_id": "1053655",
             "fide_rating": "1725",
             "fide_games": "0",
@@ -542,6 +581,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1968",
+            "gender": "M",
             "fide_id": "1002074",
             "fide_rating": "1804",
             "fide_games": "3",
@@ -556,6 +596,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1050923",
             "fide_rating": "1931",
             "fide_games": "0",
@@ -570,6 +611,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1038699",
             "fide_rating": "1807",
             "fide_games": "0",
@@ -584,6 +626,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
+            "gender": "M",
             "fide_id": "40104508",
             "fide_rating": "1795",
             "fide_games": "0",
@@ -598,6 +641,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1984",
+            "gender": "M",
             "fide_id": "1053604",
             "fide_rating": "1864",
             "fide_games": "0",
@@ -612,6 +656,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1989",
+            "gender": "V",
             "fide_id": "1021478",
             "fide_rating": "1807",
             "fide_games": "0",
@@ -626,6 +671,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "1085778",
             "fide_rating": "1851",
             "fide_games": "0",
@@ -640,6 +686,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1992",
+            "gender": "V",
             "fide_id": "1071505",
             "fide_rating": "1769",
             "fide_games": "0",
@@ -654,6 +701,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2006",
+            "gender": "V",
             "fide_id": "1058967",
             "fide_rating": "1740",
             "fide_games": "0",
@@ -668,6 +716,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
+            "gender": "V",
             "fide_id": "40109216",
             "fide_rating": "1748",
             "fide_games": "0",
@@ -682,6 +731,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1958",
+            "gender": "M",
             "fide_id": "1011952",
             "fide_rating": "1774",
             "fide_games": "4",
@@ -696,6 +746,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2000",
+            "gender": "M",
             "fide_id": "1086588",
             "fide_rating": "1748",
             "fide_games": "0",
@@ -710,6 +761,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
+            "gender": "M",
             "fide_id": "1098748"
         },
         {
@@ -721,6 +773,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1998",
+            "gender": "M",
             "fide_id": "40125238",
             "fide_rating": "1767",
             "fide_games": "2",
@@ -735,6 +788,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1994",
+            "gender": "M",
             "fide_id": "40108090",
             "fide_rating": "1724",
             "fide_games": "0",
@@ -749,6 +803,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "M",
             "fide_id": "1096419",
             "fide_rating": "1788",
             "fide_games": "0",
@@ -762,7 +817,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1947"
+            "birthday": "1947",
+            "gender": "M"
         },
         {
             "name": "Van Velthoven, Paul",
@@ -773,6 +829,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
+            "gender": "M",
             "fide_id": "1045806",
             "fide_rating": "1744",
             "fide_games": "5",
@@ -787,6 +844,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1964",
+            "gender": "M",
             "fide_id": "1017268",
             "fide_rating": "1762",
             "fide_games": "0",
@@ -801,6 +859,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
+            "gender": "M",
             "fide_id": "40109399",
             "fide_rating": "1714",
             "fide_games": "0",
@@ -815,6 +874,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2003",
+            "gender": "M",
             "fide_id": "1096400",
             "fide_rating": "1612",
             "fide_games": "0",
@@ -829,6 +889,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1946",
+            "gender": "M",
             "fide_id": "40104010",
             "fide_rating": "1725",
             "fide_games": "4",
@@ -843,6 +904,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "V",
             "fide_id": "1057839",
             "fide_rating": "1717",
             "fide_games": "0",
@@ -857,6 +919,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1996",
+            "gender": "V",
             "fide_id": "1086995",
             "fide_rating": "1684",
             "fide_games": "6",
@@ -871,6 +934,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1983",
+            "gender": "M",
             "fide_id": "40109232"
         },
         {
@@ -882,6 +946,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1998",
+            "gender": "M",
             "fide_id": "1089404",
             "fide_rating": "1702",
             "fide_games": "0",
@@ -896,6 +961,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2003",
+            "gender": "M",
             "fide_id": "40112640"
         },
         {
@@ -907,6 +973,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2004",
+            "gender": "M",
             "fide_id": "1099094",
             "fide_rating": "1611",
             "fide_games": "0",
@@ -921,6 +988,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "1099795",
             "fide_rating": "1681",
             "fide_games": "3",
@@ -935,6 +1003,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1981",
+            "gender": "V",
             "fide_id": "1063120"
         },
         {
@@ -946,6 +1015,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1968",
+            "gender": "M",
             "fide_id": "1016091",
             "fide_rating": "1701",
             "fide_games": "1",
@@ -960,6 +1030,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1985",
+            "gender": "M",
             "fide_id": "40117383"
         },
         {
@@ -970,7 +1041,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1988"
+            "birthday": "1988",
+            "gender": "M"
         },
         {
             "name": "De Kleine, Rick",
@@ -981,6 +1053,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "1088149",
             "fide_rating": "1642",
             "fide_games": "0",
@@ -990,11 +1063,12 @@
             "name": "Tilburgs, Mark",
             "profile_url": "https://ratingviewer.nl/lists/169/players/8234105",
             "current_rating": "1633",
-            "rating_change": "-",
+            "rating_change": "0",
             "games_played": "5",
             "title": "",
             "country": "NED",
             "birthday": "1993",
+            "gender": "M",
             "fide_id": "40126820"
         },
         {
@@ -1006,6 +1080,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1991",
+            "gender": "M",
             "fide_id": "1085948"
         },
         {
@@ -1017,6 +1092,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
+            "gender": "M",
             "fide_id": "40107574",
             "fide_rating": "1612",
             "fide_games": "0",
@@ -1030,7 +1106,8 @@
             "games_played": "1",
             "title": "",
             "country": "NED",
-            "birthday": "1998"
+            "birthday": "1998",
+            "gender": "V"
         },
         {
             "name": "Hoeksma, Ytzen",
@@ -1041,6 +1118,7 @@
             "title": "",
             "country": "NED",
             "birthday": "2003",
+            "gender": "M",
             "fide_id": "40121771"
         },
         {
@@ -1052,6 +1130,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1986",
+            "gender": "M",
             "fide_id": "40122441"
         },
         {
@@ -1063,6 +1142,7 @@
             "title": "",
             "country": "NED",
             "birthday": "1989",
+            "gender": "V",
             "fide_id": "1057960",
             "fide_rating": "1522",
             "fide_games": "0",
@@ -1076,7 +1156,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1995"
+            "birthday": "1995",
+            "gender": "M"
         },
         {
             "name": "Gerbrands, Max",
@@ -1086,7 +1167,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2001"
+            "birthday": "2001",
+            "gender": "M"
         },
         {
             "name": "Windt, Daan",
@@ -1096,7 +1178,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1998"
+            "birthday": "1998",
+            "gender": "M"
         },
         {
             "name": "Boers, Wouter",
@@ -1106,7 +1189,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2001"
+            "birthday": "2001",
+            "gender": "M"
         },
         {
             "name": "Zwart, Koen",
@@ -1116,28 +1200,31 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1990"
+            "birthday": "1990",
+            "gender": "M"
         },
         {
             "name": "Kampstra, Remco",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9090598",
             "current_rating": "",
-            "rating_change": "-",
+            "rating_change": "0",
             "games_played": "4",
             "title": "",
             "country": "NED",
             "birthday": "2004",
+            "gender": "M",
             "fide_id": "40125122"
         },
         {
             "name": "De Vries, Stijn",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9094217",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "4",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1998"
+            "birthday": "1998",
+            "gender": "M"
         },
         {
             "name": "Marsan, Christian",
@@ -1147,47 +1234,52 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2003"
+            "birthday": "2003",
+            "gender": "M"
         },
         {
             "name": "Kuiper, Kevin",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9093942",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "4",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2003"
+            "birthday": "2003",
+            "gender": "M"
         },
         {
             "name": "Terwisscha van Scheltinga, Vera",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9125490",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "1",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2005"
+            "birthday": "2005",
+            "gender": "V"
         },
         {
             "name": "De Bettencourt Vega, Mafalda",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9125501",
             "current_rating": "",
-            "rating_change": "-",
+            "rating_change": "0",
             "games_played": "2",
             "title": "",
             "country": "NED",
-            "birthday": "2004"
+            "birthday": "2004",
+            "gender": "V"
         },
         {
             "name": "Hidalgo, Bel\u00e9n",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9125512",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "1",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2005"
+            "birthday": "2005",
+            "gender": "V"
         },
         {
             "name": "Holterman, Marc",
@@ -1197,27 +1289,30 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1990"
+            "birthday": "1990",
+            "gender": "M"
         },
         {
             "name": "Schoorl, Jasmijn",
             "profile_url": "https://ratingviewer.nl/lists/169/players/8540147",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "1",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2005"
+            "birthday": "2005",
+            "gender": "V"
         },
         {
             "name": "Ogurlu, Baran",
             "profile_url": "https://ratingviewer.nl/lists/169/players/8844704",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "4",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1998"
+            "birthday": "1998",
+            "gender": "M"
         },
         {
             "name": "Senechal, Niels",
@@ -1227,17 +1322,19 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1999"
+            "birthday": "1999",
+            "gender": "M"
         },
         {
             "name": "Van de Vlekkert, Ilse",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9132442",
             "current_rating": "",
-            "rating_change": "-",
+            "rating_change": "0",
             "games_played": "2",
             "title": "",
             "country": "NED",
-            "birthday": "2000"
+            "birthday": "2000",
+            "gender": "V"
         },
         {
             "name": "Mooibroek, Willem",
@@ -1247,7 +1344,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2005"
+            "birthday": "2005",
+            "gender": "M"
         },
         {
             "name": "Faas, Jip",
@@ -1257,7 +1355,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1998"
+            "birthday": "1998",
+            "gender": "M"
         },
         {
             "name": "Kuiper, Dang Wu Ping",
@@ -1267,7 +1366,8 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2005"
+            "birthday": "2005",
+            "gender": "M"
         },
         {
             "name": "De Kleine, Roderick",
@@ -1277,27 +1377,30 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "1968"
+            "birthday": "1968",
+            "gender": "M"
         },
         {
             "name": "Banus, Anton",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9135951",
             "current_rating": "",
-            "rating_change": "-",
+            "rating_change": "0",
             "games_played": "1",
             "title": "",
             "country": "NED",
-            "birthday": "2003"
+            "birthday": "2003",
+            "gender": "M"
         },
         {
             "name": "Singelenberg, Hans",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9141781",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "1",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2000"
+            "birthday": "2000",
+            "gender": "M"
         },
         {
             "name": "Hoekstra, Seard",
@@ -1307,17 +1410,19 @@
             "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2001"
+            "birthday": "2001",
+            "gender": "M"
         },
         {
             "name": "Reijenga, Lars",
             "profile_url": "https://ratingviewer.nl/lists/169/players/9144905",
             "current_rating": "",
-            "rating_change": "-",
-            "games_played": "1",
+            "rating_change": "0",
+            "games_played": "0",
             "title": "",
             "country": "NED",
-            "birthday": "2002"
+            "birthday": "2002",
+            "gender": "M"
         }
     ]
 }
