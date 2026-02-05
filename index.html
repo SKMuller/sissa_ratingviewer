@@ -86,6 +86,11 @@
             cursor: pointer;
             border-bottom: 3px solid transparent;
             margin-bottom: -4px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        #sissa-rating-container .tab-btn:focus {
+            outline: none;
         }
 
         #sissa-rating-container .tab-btn.active {
@@ -112,11 +117,11 @@
 
         /* Sticky Header Core Logic */
         #sissa-rating-container th {
-            padding: 15px 20px;
+            padding: 15px 12px;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #636e72;
-            text-transform: uppercase;
+            /* text-transform: uppercase; REMOVED */
             cursor: pointer;
             background: #fff;
             user-select: none;
@@ -154,7 +159,7 @@
         }
 
         #sissa-rating-container td {
-            padding: 12px 20px;
+            padding: 12px 12px;
             border-bottom: 1px solid #f5f6fa;
             font-size: 0.95rem;
             white-space: nowrap;
@@ -310,9 +315,8 @@
                 /* Shadow only on the Name column edge */
 
                 /* WRAPPING LOGIC */
-                width: 110px;
-                /* Constrain width */
-                max-width: 110px;
+                min-width: 140px;
+                max-width: 200px;
                 white-space: normal !important;
                 /* Force wrap */
                 word-wrap: break-word;

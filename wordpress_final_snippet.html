@@ -73,6 +73,11 @@
         cursor: pointer;
         border-bottom: 3px solid transparent;
         margin-bottom: -4px;
+        transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    #sissa-rating-container .tab-btn:focus {
+        outline: none;
     }
 
     #sissa-rating-container .tab-btn.active {
@@ -98,10 +103,99 @@
     }
 
     /* Sticky Header Core Logic */
-    #sissa-rating-container th {
-        padding: 15px 20px;
+    #sissa-rating-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        width: 100%;
+        /* Changed from max-width: 100% to ensure full expansion */
+        margin: 20px auto;
+        position: relative;
+    }
+
+    /* Filters */
+    #sissa-rating-container header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background: #fff;
+        border-bottom: 1px solid #f1f1f1;
+        gap: 15px;
+    }
+
+    #sissa-rating-container input[type="text"] {
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 1px solid #e1e1e1;
+        font-size: 0.95rem;
+        width: 200px;
+    }
+
+    /* Tabs */
+    #sissa-rating-container .tabs {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #f1f1f1;
+        padding: 10px 30px 0;
+    }
+
+    #sissa-rating-container .tab-btn {
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
         font-weight: 600;
-        font-size: 0.85rem;
+        color: #636e72;
+        padding: 8px 15px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -4px;
+        transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    #sissa-rating-container .tab-btn:focus {
+        outline: none;
+    }
+
+    #sissa-rating-container .tab-btn.active {
+        color: #3498db;
+        border-bottom: 3px solid #3498db;
+    }
+
+    /* Table */
+    #sissa-rating-container .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* iOS Smooth Scroll */
+        width: 100%;
+        display: block;
+        max-height: 80vh;
+        /* Limit height to trigger vertical scroll if needed, or browser scroll */
+    }
+
+    #sissa-rating-container table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    /* Sticky Header Core Logic */
+    #sissa-rating-container thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        /* High Z-Index for Header */
+    }
+
+    #sissa-rating-container th {
+        padding: 15px 12px;
+        /* Reduced from 20px to 12px for better fit */
+        font-weight: 600;
+        font-size: 0.9rem;
         color: #636e72;
         /* text-transform: uppercase; REMOVED */
         cursor: pointer;
@@ -141,7 +235,8 @@
     }
 
     #sissa-rating-container td {
-        padding: 12px 20px;
+        padding: 12px 12px;
+        /* Reduced from 20px to 12px for better fit */
         border-bottom: 1px solid #f5f6fa;
         font-size: 0.95rem;
         white-space: nowrap;
@@ -169,7 +264,6 @@
         text-align: center;
         color: #b2bec3;
         font-weight: 600;
-        font-size: 0.8rem;
     }
 
     #sissa-rating-container .col-rating {
@@ -198,21 +292,18 @@
         width: 60px;
         text-align: center;
         color: #636e72;
-        font-size: 0.9em;
     }
 
     #sissa-rating-container .col-yob {
         width: 60px;
         text-align: center;
         color: #636e72;
-        font-size: 0.9em;
     }
 
     #sissa-rating-container .col-gender {
         width: 40px;
         text-align: center;
         color: #636e72;
-        font-size: 0.9em;
     }
 
     #sissa-rating-container .rating-val {
@@ -304,9 +395,8 @@
             /* Shadow only on the Name column edge */
 
             /* WRAPPING LOGIC */
-            width: 110px;
-            /* Constrain width */
-            max-width: 110px;
+            min-width: 140px;
+            max-width: 200px;
             white-space: normal !important;
             /* Force wrap */
             word-wrap: break-word;
