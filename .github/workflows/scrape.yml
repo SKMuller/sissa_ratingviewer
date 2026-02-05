@@ -1,0 +1,41 @@
+name: Scrape Ratings
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run at 09:00 UTC on the 1st of every month
+    - cron: '0 9 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          playwright install chromium
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add sissa_ratings.json
+          timestamp=$(date -u)
+          git commit -m "Update ratings data: ${timestamp}" || exit 0
+          git push
