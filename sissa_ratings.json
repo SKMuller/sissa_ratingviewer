@@ -1,6 +1,6 @@
 {
     "club": "JSV SISSA",
-    "timestamp": "2026-04-01T07:58:09.451918",
+    "timestamp": "2026-04-01T08:36:55.376404",
     "players": [
         {
             "name": "Van Foreest, Jorden",
@@ -21,12 +21,16 @@
             "name": "Van Foreest, Lucas",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8369405",
             "current_rating": "2517",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "3",
+            "games_played": "1",
             "title": "GM",
             "country": "NED",
             "birthday": "2001",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1039792",
+            "fide_rating": "2528",
+            "fide_games": "5",
+            "fide_change": "+9"
         },
         {
             "name": "Dijkstra, Arjan",
@@ -62,12 +66,16 @@
             "name": "Westerlaan, Sander",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8379855",
             "current_rating": "2143",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "4",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "1990",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1044346",
+            "fide_rating": "2066",
+            "fide_games": "2",
+            "fide_change": "0"
         },
         {
             "name": "Singelenberg, Hans",
@@ -160,23 +168,31 @@
             "name": "Haan, Gertjan",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8324613",
             "current_rating": "2065",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "3",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "1996",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1039350",
+            "fide_rating": "2013",
+            "fide_games": "1",
+            "fide_change": "-12"
         },
         {
             "name": "De Jongh, Benno",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7908186",
             "current_rating": "2044",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-3",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1980",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1059319",
+            "fide_rating": "1999",
+            "fide_games": "1",
+            "fide_change": "-2"
         },
         {
             "name": "Jonker, Jorik",
@@ -187,18 +203,23 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1060384"
         },
         {
             "name": "Morsch, Tjeerd",
             "profile_url": "https://ratingviewer.nl/lists/175/players/9109672",
             "current_rating": "2020",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "6",
+            "games_played": "2",
             "title": "",
             "country": "NED",
             "birthday": "2001",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40120562",
+            "fide_rating": "1922",
+            "fide_games": "1",
+            "fide_change": "-4"
         },
         {
             "name": "Oord, Raymon",
@@ -209,40 +230,56 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1046110",
+            "fide_rating": "2011",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Meijer, Olaf",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8354357",
             "current_rating": "2013",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "31",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "2001",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1098527",
+            "fide_rating": "1959",
+            "fide_games": "2",
+            "fide_change": "+14"
         },
         {
             "name": "Torenbosch, Jorn",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8649245",
             "current_rating": "1998",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-11",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1996",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1056506",
+            "fide_rating": "1966",
+            "fide_games": "1",
+            "fide_change": "-9"
         },
         {
             "name": "Manenschijn, Wouter",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8318981",
             "current_rating": "1993",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "22",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "1997",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1043366",
+            "fide_rating": "1930",
+            "fide_games": "2",
+            "fide_change": "+19"
         },
         {
             "name": "Boer, Jo\u00ebl",
@@ -253,18 +290,26 @@
             "title": "",
             "country": "NED",
             "birthday": "2004",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40114430",
+            "fide_rating": "1888",
+            "fide_games": "0",
+            "fide_change": "-24"
         },
         {
             "name": "Scheffer, Enno",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7263718",
             "current_rating": "1986",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "10",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1954",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1049976",
+            "fide_rating": "2040",
+            "fide_games": "1",
+            "fide_change": "+13"
         },
         {
             "name": "Nadison, Leor",
@@ -275,7 +320,11 @@
             "title": "",
             "country": "FRA",
             "birthday": "1986",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "20653271",
+            "fide_rating": "1981",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Rookus, Sjoerd",
@@ -361,7 +410,11 @@
             "title": "",
             "country": "NED",
             "birthday": "1982",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40108821",
+            "fide_rating": "1859",
+            "fide_games": "0",
+            "fide_change": "-5"
         },
         {
             "name": "Van der Woude, Benjamin",
@@ -372,7 +425,11 @@
             "title": "",
             "country": "NED",
             "birthday": "1995",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1033638",
+            "fide_rating": "1926",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Brand, Niels",
@@ -383,29 +440,41 @@
             "title": "",
             "country": "NED",
             "birthday": "1992",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1085107",
+            "fide_rating": "1887",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Spanjer, Joris",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8509512",
             "current_rating": "1917",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-7",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "2001",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1052772",
+            "fide_rating": "1851",
+            "fide_games": "2",
+            "fide_change": "-6"
         },
         {
             "name": "Weitenberg, Jordi",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8960710",
             "current_rating": "1916",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "3",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "2000",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1096451",
+            "fide_rating": "1982",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Santema, Tjeerd",
@@ -416,51 +485,71 @@
             "title": "",
             "country": "NED",
             "birthday": "1994",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1056492",
+            "fide_rating": "1923",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Baars, Tije",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8544800",
             "current_rating": "1911",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "9",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "2002",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40102157",
+            "fide_rating": "1857",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Dijkstra, Edwin",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7931594",
             "current_rating": "1909",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "19",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1984",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40117774",
+            "fide_rating": "1890",
+            "fide_games": "1",
+            "fide_change": "+24"
         },
         {
             "name": "Bloemhof, Ruben",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8887923",
             "current_rating": "1903",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "23",
+            "games_played": "2",
             "title": "",
             "country": "NED",
             "birthday": "1996",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1083422",
+            "fide_rating": "1867",
+            "fide_games": "1",
+            "fide_change": "+12"
         },
         {
             "name": "Pouw, Marcel",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7594543",
             "current_rating": "1900",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "28",
+            "games_played": "5",
             "title": "",
             "country": "NED",
             "birthday": "1968",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1002074",
+            "fide_rating": "1818",
+            "fide_games": "1",
+            "fide_change": "+14"
         },
         {
             "name": "Sipkema, Willem",
@@ -471,51 +560,68 @@
             "title": "",
             "country": "NED",
             "birthday": "1984",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1047965",
+            "fide_rating": "1895",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Hemmes, Maarten",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7993128",
             "current_rating": "1890",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-5",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1988",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1020960",
+            "fide_rating": "1895",
+            "fide_games": "1",
+            "fide_change": "-5"
         },
         {
             "name": "Koning, Femke",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8507609",
             "current_rating": "1866",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "6",
+            "games_played": "4",
             "title": "",
             "country": "NED",
             "birthday": "2000",
-            "gender": "V"
+            "gender": "V",
+            "fide_id": "1053655",
+            "fide_rating": "1718",
+            "fide_games": "1",
+            "fide_change": "+3"
         },
         {
             "name": "Van Os, Ben",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7959006",
             "current_rating": "1861",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "9",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1988",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1038699",
+            "fide_rating": "1807",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Jansen, Eric",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7976551",
             "current_rating": "1858",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-30",
+            "games_played": "1",
             "title": "",
             "country": "NED",
             "birthday": "1989",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1090780"
         },
         {
             "name": "Meijer, Daniel",
@@ -526,7 +632,11 @@
             "title": "",
             "country": "NED",
             "birthday": "1988",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1050923",
+            "fide_rating": "1931",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Teeken, Joshua",
@@ -537,18 +647,26 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40104508",
+            "fide_rating": "1812",
+            "fide_games": "6",
+            "fide_change": "+17"
         },
         {
             "name": "Cleveringa, Writser",
             "profile_url": "https://ratingviewer.nl/lists/175/players/8603947",
             "current_rating": "1844",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-9",
+            "games_played": "2",
             "title": "",
             "country": "NED",
             "birthday": "1984",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1053604",
+            "fide_rating": "1866",
+            "fide_games": "1",
+            "fide_change": "-8"
         },
         {
             "name": "De Jong, Anne-Dirk",
@@ -674,23 +792,31 @@
             "name": "Cats, Sven",
             "profile_url": "https://ratingviewer.nl/lists/175/players/9125534",
             "current_rating": "1793",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "16",
+            "games_played": "4",
             "title": "",
             "country": "NED",
             "birthday": "1998",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40125238",
+            "fide_rating": "1771",
+            "fide_games": "1",
+            "fide_change": "+4"
         },
         {
             "name": "Van der Veen, Anne",
             "profile_url": "https://ratingviewer.nl/lists/175/players/7710923",
             "current_rating": "1784",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "19",
+            "games_played": "2",
             "title": "",
             "country": "NED",
             "birthday": "1964",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1017268",
+            "fide_rating": "1777",
+            "fide_games": "1",
+            "fide_change": "+6"
         },
         {
             "name": "Be, Rogier",
@@ -701,7 +827,8 @@
             "title": "",
             "country": "NED",
             "birthday": "1999",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "1098748"
         },
         {
             "name": "Piek, Rosaline",
@@ -722,12 +849,16 @@
             "name": "Vaessen, Lucas",
             "profile_url": "https://ratingviewer.nl/lists/175/players/9044662",
             "current_rating": "1770",
-            "rating_change": "0",
-            "games_played": "0",
+            "rating_change": "-17",
+            "games_played": "3",
             "title": "",
             "country": "NED",
             "birthday": "1994",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40108090",
+            "fide_rating": "1724",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Kranendonk, Wout",
@@ -806,7 +937,11 @@
             "title": "",
             "country": "NED",
             "birthday": "1946",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40104010",
+            "fide_rating": "1725",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Visee, Thijs",
@@ -817,7 +952,11 @@
             "title": "",
             "country": "NED",
             "birthday": "1997",
-            "gender": "M"
+            "gender": "M",
+            "fide_id": "40109399",
+            "fide_rating": "1714",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Pronk, David",
