@@ -2,6 +2,12 @@ name: Scrape Ratings
 
 on:
   workflow_dispatch:
+    inputs:
+      fide_only:
+        description: 'Update FIDE ratings only (runs in seconds)'
+        required: false
+        type: boolean
+        default: false
   schedule:
     # Run at 09:00 UTC on the 1st of every month
     - cron: '0 9 1 * *'
@@ -29,7 +35,12 @@ jobs:
           playwright install chromium
 
       - name: Run scraper
-        run: python scraper.py
+        run: |
+          if [ "${{ inputs.fide_only }}" = "true" ]; then
+            python scraper.py --fide-only
+          else
+            python scraper.py
+          fi
 
       - name: Commit and push changes
         run: |
