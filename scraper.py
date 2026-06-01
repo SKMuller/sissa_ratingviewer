@@ -27,65 +27,206 @@ def get_previous_period_url():
     url = f"https://ratings.fide.com/download/standard_{mon}{yy}frl_xml.zip"
     return url
 
-def download_and_parse_fide_xml(url):
+async def download_and_parse_fide_xml_async(url, page=None):
     """
     Downloads and parses a FIDE XML list from a given URL.
-    Returns: {fide_id: {rating, games}}
+    First tries requests (HTTPS then HTTP with a browser User-Agent).
+    Falls back to Playwright Chromium download if requests fail.
+    Returns: {fide_id: {rating, games, title, country, birthday}}
     """
     print(f"Downloading FIDE List from {url}...")
+    content = None
+    temp_zip_path = None
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    
+    # 1. Try requests with HTTPS
     try:
-        response = requests.get(url, stream=True)
-        if response.status_code != 200:
-            print(f"  -> Failed (Status {response.status_code})")
-            return {}
-            
-        with zipfile.ZipFile(io.BytesIO(response.content)) as z:
-            xml_filename = [name for name in z.namelist() if name.endswith('.xml')][0]
-            print(f"  -> Parsing {xml_filename}...")
-            
-            fide_data = {}
-            with z.open(xml_filename) as f:
-                tree = ET.parse(f)
-                root = tree.getroot()
-                
-                for player in root.findall('player'):
-                    fide_id = player.find('fideid').text
-                    rating = player.find('rating').text
-                    games = player.find('games').text
-                    title = player.find('title').text
-                    country = player.find('country').text
-                    birthday = player.find('birthday').text
-                    
-                    if fide_id:
-                        fide_data[fide_id] = {
-                            "rating": int(rating) if rating and rating.isdigit() else 0,
-                            "games": int(games) if games and games.isdigit() else 0,
-                            "title": title if title else "",
-                            "country": country if country else "",
-                            "birthday": birthday if birthday else ""
-                        }
+        print("  -> Attempting download via requests (HTTPS)...")
+        response = requests.get(url, headers=headers, timeout=(10, 30))
+        if response.status_code == 200:
+            content = response.content
+            print("  -> Download successful.")
+        else:
+            print(f"  -> HTTPS failed with status code: {response.status_code}")
+    except Exception as e:
+        print(f"  -> requests (HTTPS) failed: {e}")
         
-        print(f"  -> Loaded {len(fide_data)} records.")
-        return fide_data
+    # 2. Try requests with HTTP (port 80) if HTTPS failed
+    if content is None:
+        http_url = url.replace("https://", "http://")
+        try:
+            print("  -> Attempting download via requests (HTTP)...")
+            response = requests.get(http_url, headers=headers, timeout=(10, 30))
+            if response.status_code == 200:
+                content = response.content
+                print("  -> Download successful.")
+            else:
+                print(f"  -> HTTP failed with status code: {response.status_code}")
+        except Exception as e:
+            print(f"  -> requests (HTTP) failed: {e}")
 
+    # 3. Try Playwright download if requests failed
+    if content is None:
+        try:
+            print("  -> Attempting download via Playwright Chromium...")
+            import tempfile
+            temp_dir = tempfile.gettempdir()
+            temp_zip_path = os.path.join(temp_dir, f"fide_{os.path.basename(url)}")
+            if os.path.exists(temp_zip_path):
+                try:
+                    os.remove(temp_zip_path)
+                except Exception:
+                    pass
+            
+            if page is None:
+                async with async_playwright() as p:
+                    browser = await p.chromium.launch(headless=True)
+                    context = await browser.new_context()
+                    pg = await context.new_page()
+                    async with pg.expect_download(timeout=60000) as download_info:
+                        try:
+                            await pg.goto(url, timeout=60000)
+                        except Exception:
+                            pass
+                    download = await download_info.value
+                    await download.save_as(temp_zip_path)
+                    await browser.close()
+            else:
+                async with page.expect_download(timeout=60000) as download_info:
+                    try:
+                        await page.goto(url, timeout=60000)
+                    except Exception:
+                        pass
+                download = await download_info.value
+                await download.save_as(temp_zip_path)
+                
+            print("  -> Playwright download successful.")
+        except Exception as e:
+            print(f"  -> Playwright download failed: {e}")
+
+    # 4. Parse ZIP file
+    fide_data = {}
+    try:
+        zip_file_obj = None
+        if content is not None:
+            zip_file_obj = zipfile.ZipFile(io.BytesIO(content))
+        elif temp_zip_path is not None and os.path.exists(temp_zip_path):
+            zip_file_obj = zipfile.ZipFile(temp_zip_path)
+            
+        if zip_file_obj is not None:
+            with zip_file_obj as z:
+                xml_filename = [name for name in z.namelist() if name.endswith('.xml')][0]
+                print(f"  -> Parsing {xml_filename}...")
+                
+                with z.open(xml_filename) as f:
+                    tree = ET.parse(f)
+                    root = tree.getroot()
+                    
+                    for player in root.findall('player'):
+                        fide_id = player.find('fideid').text
+                        rating = player.find('rating').text
+                        games = player.find('games').text
+                        title = player.find('title').text
+                        country = player.find('country').text
+                        birthday = player.find('birthday').text
+                        
+                        if fide_id:
+                            fide_data[fide_id] = {
+                                "rating": int(rating) if rating and rating.isdigit() else 0,
+                                "games": int(games) if games and games.isdigit() else 0,
+                                "title": title if title else "",
+                                "country": country if country else "",
+                                "birthday": birthday if birthday else ""
+                            }
+            print(f"  -> Loaded {len(fide_data)} records.")
+        else:
+            print("  -> No download source available (both requests and Playwright failed).")
     except Exception as e:
         print(f"Error processing FIDE XML {url}: {e}")
-        return {}
+    finally:
+        if temp_zip_path is not None and os.path.exists(temp_zip_path):
+            try:
+                os.remove(temp_zip_path)
+            except Exception:
+                pass
+                
+    return fide_data
 
-async def scrape_ratings():
+async def scrape_ratings(fide_only=False):
     # 1. Prepare FIDE Data (Current & Previous)
-    print("--- FIDE Data Preparation ---")
-    current_fide = download_and_parse_fide_xml(FIDE_XML_URL)
-    
-    prev_url = get_previous_period_url()
-    prev_fide = download_and_parse_fide_xml(prev_url)
-    
-    print("-----------------------------")
+    if fide_only:
+        print("--- FIDE Data Preparation ---")
+        current_fide = await download_and_parse_fide_xml_async(FIDE_XML_URL)
+        prev_url = get_previous_period_url()
+        prev_fide = await download_and_parse_fide_xml_async(prev_url)
+        print("-----------------------------")
 
+        print("--- Running FIDE-Only Update ---")
+        if not os.path.exists(OUTPUT_FILE):
+            print(f"Error: {OUTPUT_FILE} does not exist. Run full scraper first to populate KNSB data.")
+            return
+
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        players = data.get("players", [])
+        print(f"Loaded {len(players)} players from {OUTPUT_FILE}.")
+
+        updated_count = 0
+        for player in players:
+            fide_id = player.get("fide_id")
+            if fide_id:
+                if fide_id in current_fide:
+                    curr_rec = current_fide[fide_id]
+                    player["fide_rating"] = str(curr_rec["rating"])
+                    player["fide_games"] = str(curr_rec["games"])
+                    
+                    # Calculate Change
+                    prev_rating = 0
+                    if fide_id in prev_fide:
+                        prev_rating = prev_fide[fide_id]["rating"]
+                        if prev_rating > 0:
+                            change = curr_rec["rating"] - prev_rating
+                            player["fide_change"] = f"+{change}" if change > 0 else str(change)
+                    else:
+                        player["fide_change"] = "0"
+                        
+                    # Additional Details
+                    if not player.get("title") and curr_rec["title"]:
+                        player["title"] = curr_rec["title"]
+                    if not player.get("country") and curr_rec["country"]:
+                        player["country"] = curr_rec["country"]
+                    if not player.get("birthday") and curr_rec["birthday"]:
+                        player["birthday"] = curr_rec["birthday"]
+                    
+                    updated_count += 1
+                    print(f"  -> Updated {player['name']} (FIDE ID {fide_id}): Rating {player['fide_rating']}, Change {player['fide_change']}")
+
+        # Save to JSON
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "club": data.get("club", "JSV SISSA"),
+                "timestamp": datetime.datetime.now().isoformat(),
+                "players": players
+            }, f, indent=4)
+        
+        print(f"Done! Updated {updated_count} players. Saved data to {OUTPUT_FILE}")
+        return
+
+    # Full scraping mode
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
+
+        print("--- FIDE Data Preparation ---")
+        current_fide = await download_and_parse_fide_xml_async(FIDE_XML_URL, page=page)
+        prev_url = get_previous_period_url()
+        prev_fide = await download_and_parse_fide_xml_async(prev_url, page=page)
+        print("-----------------------------")
 
         print(f"Navigating to {CLUB_URL}...")
         await page.goto(CLUB_URL)
@@ -262,4 +403,6 @@ async def scrape_ratings():
         await browser.close()
 
 if __name__ == "__main__":
-    asyncio.run(scrape_ratings())
+    import sys
+    fide_only = "--fide-only" in sys.argv or "-f" in sys.argv
+    asyncio.run(scrape_ratings(fide_only=fide_only))
