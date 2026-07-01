@@ -9,8 +9,8 @@ on:
         type: boolean
         default: false
   schedule:
-    # Run at 09:00 UTC on the 1st of every month
-    - cron: '0 9 1 * *'
+    # Run at 07:00 UTC on the 1st of every month
+    - cron: '0 7 1 * *'
 
 permissions:
   contents: write
