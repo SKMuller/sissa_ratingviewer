@@ -1,6 +1,6 @@
 {
     "club": "JSV SISSA",
-    "timestamp": "2026-08-01T09:15:31.066957",
+    "timestamp": "2026-08-02T08:42:25.444838",
     "players": [
         {
             "name": "Van Foreest, Jorden",
@@ -12,7 +12,10 @@
             "country": "NED",
             "birthday": "1999",
             "gender": "M",
-            "fide_id": "1039784"
+            "fide_id": "1039784",
+            "fide_rating": "2728",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van Foreest, Lucas",
@@ -24,7 +27,10 @@
             "country": "NED",
             "birthday": "2001",
             "gender": "M",
-            "fide_id": "1039792"
+            "fide_id": "1039792",
+            "fide_rating": "2555",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Dijkstra, Arjan",
@@ -36,7 +42,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1021389"
+            "fide_id": "1021389",
+            "fide_rating": "2148",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Bruggink, Tycho",
@@ -48,7 +57,10 @@
             "country": "NED",
             "birthday": "2003",
             "gender": "M",
-            "fide_id": "1050028"
+            "fide_id": "1050028",
+            "fide_rating": "2118",
+            "fide_games": "9",
+            "fide_change": "+1"
         },
         {
             "name": "Westerlaan, Sander",
@@ -60,7 +72,10 @@
             "country": "NED",
             "birthday": "1990",
             "gender": "M",
-            "fide_id": "1044346"
+            "fide_id": "1044346",
+            "fide_rating": "2073",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Salihbegovic, Edim",
@@ -72,7 +87,10 @@
             "country": "BIH",
             "birthday": "1982",
             "gender": "M",
-            "fide_id": "14403285"
+            "fide_id": "14403285",
+            "fide_rating": "2064",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Tromp, Pieter",
@@ -84,7 +102,10 @@
             "country": "NED",
             "birthday": "1990",
             "gender": "M",
-            "fide_id": "1026402"
+            "fide_id": "1026402",
+            "fide_rating": "2135",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Muller, Kenneth",
@@ -96,7 +117,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "1052977"
+            "fide_id": "1052977",
+            "fide_rating": "2025",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Haan, Gertjan",
@@ -108,7 +132,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "M",
-            "fide_id": "1039350"
+            "fide_id": "1039350",
+            "fide_rating": "2030",
+            "fide_games": "7",
+            "fide_change": "+11"
         },
         {
             "name": "De Jongh, Benno",
@@ -120,7 +147,10 @@
             "country": "NED",
             "birthday": "1980",
             "gender": "M",
-            "fide_id": "1059319"
+            "fide_id": "1059319",
+            "fide_rating": "2007",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "De Jong, Mathijs",
@@ -132,7 +162,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1067109"
+            "fide_id": "1067109",
+            "fide_rating": "2027",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Meijer, Olaf",
@@ -144,7 +177,10 @@
             "country": "NED",
             "birthday": "2001",
             "gender": "M",
-            "fide_id": "1098527"
+            "fide_id": "1098527",
+            "fide_rating": "1959",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Jonker, Jorik",
@@ -168,7 +204,10 @@
             "country": "NED",
             "birthday": "1999",
             "gender": "M",
-            "fide_id": "1046110"
+            "fide_id": "1046110",
+            "fide_rating": "2011",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Timmer, Michel",
@@ -180,7 +219,10 @@
             "country": "NED",
             "birthday": "2003",
             "gender": "M",
-            "fide_id": "40104524"
+            "fide_id": "40104524",
+            "fide_rating": "1915",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Boer, Jo\u00ebl",
@@ -192,7 +234,10 @@
             "country": "NED",
             "birthday": "2004",
             "gender": "M",
-            "fide_id": "40114430"
+            "fide_id": "40114430",
+            "fide_rating": "1888",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Emmanuel, Rajkumar",
@@ -204,7 +249,10 @@
             "country": "IND",
             "birthday": "2001",
             "gender": "M",
-            "fide_id": "429002338"
+            "fide_id": "429002338",
+            "fide_rating": "1985",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Torenbosch, Jorn",
@@ -216,7 +264,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "M",
-            "fide_id": "1056506"
+            "fide_id": "1056506",
+            "fide_rating": "1961",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Scheffer, Enno",
@@ -228,7 +279,10 @@
             "country": "NED",
             "birthday": "1954",
             "gender": "M",
-            "fide_id": "1049976"
+            "fide_id": "1049976",
+            "fide_rating": "2040",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Rookus, Sjoerd",
@@ -240,7 +294,10 @@
             "country": "NED",
             "birthday": "1993",
             "gender": "M",
-            "fide_id": "1055615"
+            "fide_id": "1055615",
+            "fide_rating": "1935",
+            "fide_games": "9",
+            "fide_change": "+9"
         },
         {
             "name": "Nadison, Leor",
@@ -252,7 +309,10 @@
             "country": "FRA",
             "birthday": "1986",
             "gender": "M",
-            "fide_id": "20653271"
+            "fide_id": "20653271",
+            "fide_rating": "1981",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Manenschijn, Wouter",
@@ -264,7 +324,10 @@
             "country": "NED",
             "birthday": "1997",
             "gender": "M",
-            "fide_id": "1043366"
+            "fide_id": "1043366",
+            "fide_rating": "1926",
+            "fide_games": "7",
+            "fide_change": "+3"
         },
         {
             "name": "Offringa, Tjaart",
@@ -276,7 +339,10 @@
             "country": "NED",
             "birthday": "1986",
             "gender": "M",
-            "fide_id": "1020978"
+            "fide_id": "1020978",
+            "fide_rating": "1998",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Singelenberg, Hans",
@@ -288,7 +354,10 @@
             "country": "NED",
             "birthday": "2000",
             "gender": "M",
-            "fide_id": "40128865"
+            "fide_id": "40128865",
+            "fide_rating": "1770",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Baars, Tije",
@@ -300,7 +369,10 @@
             "country": "NED",
             "birthday": "2002",
             "gender": "M",
-            "fide_id": "40102157"
+            "fide_id": "40102157",
+            "fide_rating": "1876",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Walinga, Eric Jan",
@@ -312,7 +384,10 @@
             "country": "NED",
             "birthday": "1961",
             "gender": "M",
-            "fide_id": "1011898"
+            "fide_id": "1011898",
+            "fide_rating": "1930",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Pouw, Marcel",
@@ -324,7 +399,10 @@
             "country": "NED",
             "birthday": "1968",
             "gender": "M",
-            "fide_id": "1002074"
+            "fide_id": "1002074",
+            "fide_rating": "1819",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Roorda, Maarten",
@@ -336,7 +414,10 @@
             "country": "NED",
             "birthday": "1977",
             "gender": "M",
-            "fide_id": "1030612"
+            "fide_id": "1030612",
+            "fide_rating": "1930",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Dijkstra, Edwin",
@@ -348,7 +429,10 @@
             "country": "NED",
             "birthday": "1984",
             "gender": "M",
-            "fide_id": "40117774"
+            "fide_id": "40117774",
+            "fide_rating": "1899",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Spanjer, Joris",
@@ -360,7 +444,10 @@
             "country": "NED",
             "birthday": "2001",
             "gender": "M",
-            "fide_id": "1052772"
+            "fide_id": "1052772",
+            "fide_rating": "1862",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Hoogeboom, Arthur",
@@ -372,7 +459,10 @@
             "country": "NED",
             "birthday": "1982",
             "gender": "M",
-            "fide_id": "40108821"
+            "fide_id": "40108821",
+            "fide_rating": "1859",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Weitenberg, Jordi",
@@ -384,7 +474,10 @@
             "country": "NED",
             "birthday": "2000",
             "gender": "M",
-            "fide_id": "1096451"
+            "fide_id": "1096451",
+            "fide_rating": "1974",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Morsch, Tjeerd",
@@ -396,7 +489,10 @@
             "country": "NED",
             "birthday": "2001",
             "gender": "M",
-            "fide_id": "40120562"
+            "fide_id": "40120562",
+            "fide_rating": "1884",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van der Woude, Benjamin",
@@ -408,7 +504,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "1033638"
+            "fide_id": "1033638",
+            "fide_rating": "1926",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Santema, Tjeerd",
@@ -420,7 +519,10 @@
             "country": "NED",
             "birthday": "1994",
             "gender": "M",
-            "fide_id": "1056492"
+            "fide_id": "1056492",
+            "fide_rating": "1923",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Bloemhof, Ruben",
@@ -432,7 +534,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "M",
-            "fide_id": "1083422"
+            "fide_id": "1083422",
+            "fide_rating": "1880",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Brand, Niels",
@@ -444,7 +549,10 @@
             "country": "NED",
             "birthday": "1992",
             "gender": "M",
-            "fide_id": "1085107"
+            "fide_id": "1085107",
+            "fide_rating": "1869",
+            "fide_games": "8",
+            "fide_change": "-15"
         },
         {
             "name": "Sipkema, Willem",
@@ -456,7 +564,10 @@
             "country": "NED",
             "birthday": "1984",
             "gender": "M",
-            "fide_id": "1047965"
+            "fide_id": "1047965",
+            "fide_rating": "1895",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Hemmes, Maarten",
@@ -468,7 +579,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1020960"
+            "fide_id": "1020960",
+            "fide_rating": "1895",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Jovanovic, Luka",
@@ -480,7 +594,10 @@
             "country": "NED",
             "birthday": "2006",
             "gender": "M",
-            "fide_id": "1091310"
+            "fide_id": "1091310",
+            "fide_rating": "1783",
+            "fide_games": "9",
+            "fide_change": "0"
         },
         {
             "name": "Koning, Femke",
@@ -492,7 +609,10 @@
             "country": "NED",
             "birthday": "2000",
             "gender": "V",
-            "fide_id": "1053655"
+            "fide_id": "1053655",
+            "fide_rating": "1718",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van Os, Ben",
@@ -504,7 +624,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1038699"
+            "fide_id": "1038699",
+            "fide_rating": "1807",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Jansen, Eric",
@@ -528,7 +651,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1050923"
+            "fide_id": "1050923",
+            "fide_rating": "1931",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Cleveringa, Writser",
@@ -540,7 +666,10 @@
             "country": "NED",
             "birthday": "1984",
             "gender": "M",
-            "fide_id": "1053604"
+            "fide_id": "1053604",
+            "fide_rating": "1866",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Jelsma, Remco",
@@ -552,7 +681,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "1085778"
+            "fide_id": "1085778",
+            "fide_rating": "1835",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "De Jong, Anne-Dirk",
@@ -564,7 +696,10 @@
             "country": "NED",
             "birthday": "1997",
             "gender": "M",
-            "fide_id": "40113060"
+            "fide_id": "40113060",
+            "fide_rating": "1821",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Welling, Sophie",
@@ -576,7 +711,10 @@
             "country": "NED",
             "birthday": "1989",
             "gender": "V",
-            "fide_id": "1021478"
+            "fide_id": "1021478",
+            "fide_rating": "1805",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van Putten, Anne",
@@ -588,7 +726,10 @@
             "country": "NED",
             "birthday": "1992",
             "gender": "V",
-            "fide_id": "1071505"
+            "fide_id": "1071505",
+            "fide_rating": "1784",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Teeken, Joshua",
@@ -600,7 +741,10 @@
             "country": "NED",
             "birthday": "1999",
             "gender": "M",
-            "fide_id": "40104508"
+            "fide_id": "40104508",
+            "fide_rating": "1804",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Hoekstra, Carl",
@@ -612,7 +756,10 @@
             "country": "NED",
             "birthday": "1958",
             "gender": "M",
-            "fide_id": "1011952"
+            "fide_id": "1011952",
+            "fide_rating": "1786",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Reitsma, Freerk",
@@ -624,7 +771,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "M",
-            "fide_id": "1096419"
+            "fide_id": "1096419",
+            "fide_rating": "1830",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Heijmans, Merlijn",
@@ -636,7 +786,10 @@
             "country": "NED",
             "birthday": "2000",
             "gender": "M",
-            "fide_id": "1086588"
+            "fide_id": "1086588",
+            "fide_rating": "1760",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Be, Rogier",
@@ -660,7 +813,10 @@
             "country": "NED",
             "birthday": "1994",
             "gender": "M",
-            "fide_id": "40108090"
+            "fide_id": "40108090",
+            "fide_rating": "1725",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Piek, Rosaline",
@@ -672,7 +828,10 @@
             "country": "NED",
             "birthday": "1997",
             "gender": "V",
-            "fide_id": "40109216"
+            "fide_id": "40109216",
+            "fide_rating": "1748",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van der Veen, Anne",
@@ -684,7 +843,10 @@
             "country": "NED",
             "birthday": "1964",
             "gender": "M",
-            "fide_id": "1017268"
+            "fide_id": "1017268",
+            "fide_rating": "1777",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Kranendonk, Wout",
@@ -707,7 +869,10 @@
             "country": "NED",
             "birthday": "1988",
             "gender": "M",
-            "fide_id": "1045806"
+            "fide_id": "1045806",
+            "fide_rating": "1749",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Aandewiel, Pascal",
@@ -731,7 +896,10 @@
             "country": "NED",
             "birthday": "2003",
             "gender": "M",
-            "fide_id": "1096400"
+            "fide_id": "1096400",
+            "fide_rating": "1612",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "De Jong, Lieuwe",
@@ -743,7 +911,10 @@
             "country": "NED",
             "birthday": "1946",
             "gender": "M",
-            "fide_id": "40104010"
+            "fide_id": "40104010",
+            "fide_rating": "1725",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Visee, Thijs",
@@ -755,7 +926,10 @@
             "country": "NED",
             "birthday": "1997",
             "gender": "M",
-            "fide_id": "40109399"
+            "fide_id": "40109399",
+            "fide_rating": "1714",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Timmer, Niels",
@@ -767,7 +941,10 @@
             "country": "NED",
             "birthday": "1998",
             "gender": "M",
-            "fide_id": "1089404"
+            "fide_id": "1089404",
+            "fide_rating": "1746",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Van der Tuuk-Burgsma, Maria",
@@ -779,7 +956,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "V",
-            "fide_id": "1057839"
+            "fide_id": "1057839",
+            "fide_rating": "1717",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Andrieu, Justin",
@@ -791,7 +971,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "1099795"
+            "fide_id": "1099795",
+            "fide_rating": "1713",
+            "fide_games": "7",
+            "fide_change": "-20"
         },
         {
             "name": "Pronk, David",
@@ -803,7 +986,10 @@
             "country": "NED",
             "birthday": "2004",
             "gender": "M",
-            "fide_id": "1099094"
+            "fide_id": "1099094",
+            "fide_rating": "1664",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Cats, Sven",
@@ -815,7 +1001,10 @@
             "country": "NED",
             "birthday": "1998",
             "gender": "M",
-            "fide_id": "40125238"
+            "fide_id": "40125238",
+            "fide_rating": "1650",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Mous, Finn",
@@ -851,7 +1040,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "40107574"
+            "fide_id": "40107574",
+            "fide_rating": "1680",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Gay, Aurore",
@@ -863,7 +1055,10 @@
             "country": "NED",
             "birthday": "1996",
             "gender": "V",
-            "fide_id": "1086995"
+            "fide_id": "1086995",
+            "fide_rating": "1637",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Ogurlu, Baran",
@@ -899,7 +1094,10 @@
             "country": "NED",
             "birthday": "1968",
             "gender": "M",
-            "fide_id": "1016091"
+            "fide_id": "1016091",
+            "fide_rating": "1701",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "De Kleine, Rick",
@@ -911,7 +1109,10 @@
             "country": "NED",
             "birthday": "1995",
             "gender": "M",
-            "fide_id": "1088149"
+            "fide_id": "1088149",
+            "fide_rating": "1660",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Lutjeboer, Thijs",
@@ -934,7 +1135,10 @@
             "country": "NED",
             "birthday": "1993",
             "gender": "M",
-            "fide_id": "40126820"
+            "fide_id": "40126820",
+            "fide_rating": "1711",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Lutjeboer, Sjors",
@@ -970,7 +1174,10 @@
             "country": "NED",
             "birthday": "1991",
             "gender": "M",
-            "fide_id": "1085948"
+            "fide_id": "1085948",
+            "fide_rating": "1658",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "De Kleine, Roderick",
@@ -1029,7 +1236,10 @@
             "country": "NED",
             "birthday": "1989",
             "gender": "V",
-            "fide_id": "1057960"
+            "fide_id": "1057960",
+            "fide_rating": "1522",
+            "fide_games": "0",
+            "fide_change": "0"
         },
         {
             "name": "Veldman, Thomas",
